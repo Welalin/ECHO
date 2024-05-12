@@ -6,7 +6,7 @@
 [[Paper]](NOTREADYYET)
 [[Demo]](https://huggingface.co/spaces/babaei/ECHO)
 
-![](assets/motiveExample.pdf)
+![](assets/motiveExample.png)
 
 </div>
 
