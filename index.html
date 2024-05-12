@@ -4,10 +4,10 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="RAT: Retrieval Augmented Thoughts Elicit Context-Aware Reasoning in Long-Horizon Generation.">
-    <meta name="keywords" content="LLM, RAG, CoT">
+    <meta name="description" content="ECHO: Empathetic Conversation for Holistic Optimization">
+    <meta name="keywords" content="LLM, RAG, CoT, GoT">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RAT: Retrieval Augmented Thoughts Elicit Context-Aware Reasoning in Long-Horizon Generation</title>
+    <title>ECHO: Empathetic Conversation for Holistic Optimization</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="assets/ECHO-LOGO-BG.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -123,12 +123,12 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title"><img id="logo" width="10%" src="./static/images/logo.png"> RAT</h1>
-              <h1 class="title is-2 publication-title">Retrieval Augmented Thoughts Elicit Context-Aware Reasoning in Long-Horizon Generation</h1>
+              <h1 class="title is-1 publication-title"><img id="logo" width="10%" src="/assets/ECHO-LOGO-BG.png"> ECHO</h1>
+              <h1 class="title is-2 publication-title">Empathetic Conversation for Holistic Optimization</h1>
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
-                  <a href="https://zhwang4ai.github.io" target="_blank">Zihao Wang</a><sup>1</sup>,</span>
-                <span class="author-block">
+                  <a href="https://majidbabaei.com" target="_blank">Majid Babaei</a><sup>1</sup>,</span>
+                <!-- <span class="author-block">
                   <a href="https://liuanji.github.io/" target="_blank">Anji Liu</a><sup>2</sup>,</span>
                 <span class="author-block">
                   <a href="https://linhaowei1.github.io/" target="_blank">Haowei Lin</a><sup>1</sup>,
@@ -141,20 +141,20 @@
                 </span>
                 <span class="author-block">
                   <a href="https://scholar.google.com/citations?user=KVzR1XEAAAAJ&hl=zh-CN&oi=ao" target="_blank">Yitao Liang</a><sup>1</sup>,
-                </span>
+                </span> -->
               </div>
     
               <div class="is-size-5 publication-authors">
-                <span class="author-block"><sup>1</sup>Peking University,</span>
-                <span class="author-block"><sup>2</sup>University of California, Los Angeles</span>
-                <span class="author-block"><sup>3</sup>Beijing Institute for General Artificial Intelligence</span>
+                <span class="author-block"><sup>1</sup>McGill University</span>
+                <!-- <span class="author-block"><sup>2</sup>University of California, Los Angeles</span>
+                <span class="author-block"><sup>3</sup>Beijing Institute for General Artificial Intelligence</span> -->
               </div>
     
               <div class="column has-text-centered">
                 <div class="publication-links">
                   <!-- PDF Link. -->
                   <span class="link-block">
-                    <a href="https://arxiv.org/pdf/2403.05313.pdf" target="_blank"
+                    <a href="https://arxiv.org/pdf/NA.pdf" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -183,7 +183,7 @@
                   </span> -->
                   <!-- Code Link. -->
                   <span class="link-block">
-                    <a href="https://github.com/CraftJarvis/RAT" target="_blank"
+                    <a href="https://github.com/Welalin/ECHO" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                           <i class="fab fa-github"></i>
@@ -193,7 +193,7 @@
                   </span>
                   <!-- Demo Link. -->
                   <span class="link-block">
-                    <a href="https://huggingface.co/spaces/jeasinema/RAT" target="_blank"
+                    <a href="https://huggingface.co/spaces/babaei/ECHO" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                           <i class="far fa-images"></i>
@@ -218,11 +218,9 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                We explore how iterative revising a chain of thoughts with the help of information retrieval significantly improves large language models' reasoning and generation ability in long-horizon generation tasks, while hugely mitigating hallucination. In particular, the proposed method — retrieval-augmented thoughts (RAT) — revises each thought step one by one with retrieved information relevant to the task query, the current and the past thought steps, after the initial zero-shot CoT is generated. 
+                Large Language Models (LLMs) in conversation systems struggle with sensitive topics due to limitations in factual accuracy, diverse perspective modeling, and mutual empathy assessment. To address this, we propose ECHO (Empathetic Conversation for Holistic Optimization). ECHO leverages a Retrieval-Augmented Graph of Thought (GoT) for improved context and reasoning, alongside a Mutual Empathy Assessment (MEA) component to evaluate both expressed empathy from the LLM and perceived empathy from the user. This framework, inspired by research on collaborative empathy, aims to enhance LLM interactions in sensitive conversations.
               </p>
-              <p>
-                Applying RAT to various base models substantially improves their performances on various long-horizon generation tasks; on average of relatively increasing rating scores by 13.63% on code generation, 16.96% on mathematical reasoning, 19.2% on creative writing, and 42.78% on embodied task planning.
-              </p>
+              
             </div>
           </div>
         </div>
@@ -253,11 +251,11 @@
                 and then employing this captioner to generate <b>1.2M high-quality captions</b> for pre-training usage. -->
                 <centering>
                   <div style="text-align: center;">
-                    <img id="teaser" width="100%" src="./static/images/teaser.png">     
+                    <img id="teaser" width="100%" src="./assets/overviewallapproaches.png">     
                   </div>
                 </centering>
-                <li>Top: An example of different LLM reasoning methods on creative generation tasks. <font color="red">Red</font> text indicates errors or illusions in the text generated by LLM, while <font color="green">green</font> text represents correct generation. Methods without RAG often generate incorrect information with hallucination, classical RAG is highly related to retrieved content with a loose structure, and RAT-generated texts perform best in terms of accuracy and completeness.
-                <li>Bottom: The quantitative performance comparison for different LLM reasoning methods on complex embodied planning, mathematical reasoning, code generation, and creative generation tasks. Our RAT outperforms all the baselines on all tasks.
+                <!-- <li>Top: An example of different LLM reasoning methods on creative generation tasks. <font color="red">Red</font> text indicates errors or illusions in the text generated by LLM, while <font color="green">green</font> text represents correct generation. Methods without RAG often generate incorrect information with hallucination, classical RAG is highly related to retrieved content with a loose structure, and RAT-generated texts perform best in terms of accuracy and completeness.
+                <li>Bottom: The quantitative performance comparison for different LLM reasoning methods on complex embodied planning, mathematical reasoning, code generation, and creative generation tasks. Our RAT outperforms all the baselines on all tasks. -->
               </p>
             </div>
             <!-- </b></font> -->
@@ -278,13 +276,13 @@
             <!-- <font color="#224baf" size=4><b> -->
             <centering>
               <div style="text-align: center;">
-                <img id="teaser" width="90%" src="static/images/pipeline.png">     
+                <img id="teaser" width="90%" src="./assets/overview.png">     
               </div>
             </centering>
-            <p>
+            <!-- <p>
               Given a task prompt, RAT starts from initial step-by-step thoughts produced by an LLM in zero-shot ("let's think step by step"). Some thought steps may be flawed due to hallucination. RAT interatively revise each thought step using RAG from an external knowledge base (denoted as Library or Internet).<br>
               The detailed algorithm is as follows:
-            </p>
+            </p> -->
             <br>
             <centering>
               <div style="text-align: center;">
@@ -298,7 +296,7 @@
       </div>
     </section>
     
-    <section class="section" id="Results" style="background-color:#efeff081">
+    <!-- <section class="section" id="Results" style="background-color:#efeff081">
       <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths">
           <h2 class="title is-3">Results</h2>
@@ -307,7 +305,6 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <!-- <font color="#224baf" size=4><b> -->
             <div class="content has-text-justified">
               <p>
                 <centering>
@@ -320,13 +317,12 @@
                 Δ represents the relative improvements than DIRECT.
               </p>
             </div>
-            <!-- </b></font> -->
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     
-    <section class="section" id="examples">
+    <!-- <section class="section" id="examples">
       <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths">
           <h2 class="title is-3">Conversation Examples</h2>
@@ -352,7 +348,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     
     <!-- <section class="section" style="background-color:#efeff081" id="demo">
       <div class="container is-max-desktop" id="gradio">
@@ -364,10 +360,10 @@
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@article{wang2024rat,
-      author    = {Zihao, Wang and Anji, Liu and Haowei, Lin and Jiaqi, Li and Xiaojian, Ma and Yitao, Liang},
-      title     = {RAT: Retrieval Augmented Thoughts Elicit Context-Aware Reasoning in Long-Horizon Generation},
-      journal   = {arXiv preprint arXiv: 2403.05313},
+        <pre><code>@article{majid2024echo,
+      author    = {Majid Babaei},
+      title     = {ECHO: Empathetic Conversation for Holistic Optimization},
+      journal   = {arXiv preprint arXiv: TEST},
       year      = {2024},
     }</code></pre>
       </div>
