@@ -123,11 +123,11 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title"><img id="logo" width="10%" src="/assets/ECHO-LOGO-BG.png"> ECHO</h1>
+              <h1 class="title is-1 publication-title"><img id="logo" width="10%" src="./assets/ECHO-LOGO-BG.png"> ECHO</h1>
               <h1 class="title is-2 publication-title">Empathetic Conversation for Holistic Optimization</h1>
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
-                  <a href="https://majidbabaei.com" target="_blank">Majid Babaei</a><sup>1</sup>,</span>
+                  <a href="https://majidbabaei.com" target="_blank">Majid Babaei</a><sup>1</span>
                 <!-- <span class="author-block">
                   <a href="https://liuanji.github.io/" target="_blank">Anji Liu</a><sup>2</sup>,</span>
                 <span class="author-block">
@@ -283,13 +283,13 @@
               Given a task prompt, RAT starts from initial step-by-step thoughts produced by an LLM in zero-shot ("let's think step by step"). Some thought steps may be flawed due to hallucination. RAT interatively revise each thought step using RAG from an external knowledge base (denoted as Library or Internet).<br>
               The detailed algorithm is as follows:
             </p> -->
-            <br>
+            <!-- <br>
             <centering>
               <div style="text-align: center;">
                 <img id="teaser" width="80%" src="static/images/algorithm.png">     
               </div>
             </centering>
-            </b>
+            </b> -->
           <!-- </font>            -->
           </div>
         </div>
@@ -363,149 +363,11 @@
         <pre><code>@article{majid2024echo,
       author    = {Majid Babaei},
       title     = {ECHO: Empathetic Conversation for Holistic Optimization},
-      journal   = {arXiv preprint arXiv: TEST},
+      journal   = {arXiv preprint arXiv: N/A},
       year      = {2024},
     }</code></pre>
       </div>
     </section>
-
-    <script>
-      // Handle message showing
-      function createChatRow(sender, text, imageSrc) {
-        var article = document.createElement("article");
-        article.className = "media"
-
-        var figure = document.createElement("figure");
-        figure.className = "media-left";
-
-        var span = document.createElement("span");
-        span.className = "icon is-large";
-
-        var icon = document.createElement("i");
-        var img = document.createElement("img");
-
-        if (sender === "User") {
-          img.src = "static/images/user.png"
-        }
-        else if (sender === "ChatGPT") {
-          img.src = "static/images/chatgpt.png"
-        }
-        else if (sender === "RAT") {
-          img.src = "static/images/logo_v2.png"
-        }
-        else {
-          img.src = "staiic/images/favicon.svg"
-        }
-        icon.appendChild(img);
-
-        var media = document.createElement("div");
-        media.className = "media-content";
-
-        var content = document.createElement("div");
-        content.className = "content";
-
-        var para = document.createElement("p");
-
-        // wrap text in pre tag to preserve whitespace and line breaks
-        var pre_text = document.createElement("pre");
-        pre_text.style = "background-color: white; font-size: 18px; font-family: Arial; padding: 0; margin: 0; white-space: pre-wrap; word-wrap: break-word;";
-        var paraText = document.createTextNode(text);
-        pre_text.appendChild(paraText);
-
-        var strong = document.createElement("strong");
-        strong.innerHTML = sender;
-        var br = document.createElement("br");
-
-        para.appendChild(strong);
-        para.appendChild(br);
-        para.appendChild(pre_text);
-
-        if (imageSrc) {
-          var img = document.createElement("img");
-          img.src = imageSrc;
-          img.style = "max-width: 100%; max-height: 300px;"; // Adjust the style as needed
-          para.appendChild(img);
-        }
-
-        content.appendChild(para);
-        media.appendChild(content);
-        span.appendChild(icon);
-        figure.appendChild(span);
-        if (sender !== "Description") {
-          article.appendChild(figure);
-        };
-        article.appendChild(media);
-        return article;
-      }
-
-      function addMessageToChatHistory(sender, message, imageSrc) {
-        const chatHistory = document.querySelector('.chat-history');
-        const chatRow = createChatRow(sender, message, imageSrc);
-        chatHistory.appendChild(chatRow);
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-      }
-
-      function clearChatHistory() {
-        const chatHistory = document.querySelector('.chat-history');
-        chatHistory.innerHTML = "";
-      }
-
-      const conversations = [
-      {
-        "description": "Bio Generation",
-        "turns": [
-          ["User", "Introduce Yitao Liang to me. He is an Assistant Professor in Peking University and graduate from UCLA."],
-          ["ChatGPT", "Yitao Liang is an Assistant Professor at Peking University. He graduated from the University of California, Los Angeles (UCLA). Yitao Liang's academic background and experience have led him to his current position at one of China's prestigious universities. His education at UCLA likely provided him with a strong foundation in his field, enabling him to pursue a career in academia at Peking University. This transition from student to Assistant Professor signifies his dedication to research and teaching in his chosen field."],
-          ["RAT",
-            "Yitao Liang, a distinguished scholar, holds a PhD from UCLA, illustrating his robust research background and academic accomplishments. His role as an assistant professor at Peking University underscores his valuable contributions to academia, particularly in the realms of knowledge reasoning and machine learning. Yitao Liang's broad research interests encompass areas such as knowledge reasoning and machine learning, showcasing his profound expertise and involvement in cutting-edge advancements within these fields. His academic trajectory, from doctoral studies at UCLA under the mentorship of Prof. Guy Van den Broeck to his current position at Peking University, highlights his dedication to pushing the boundaries of AI research and exploring innovative strategies for constructing generalist agents in open-world settings.\n\n" + 
-            "Through significant accolades, including recognition at premier AI conferences and impactful contributions to research workshops, Yitao Liang has emerged as a prominent figure in the academic landscape. His leadership within research groups like Team CraftJarvis, where a neural-symbolic method is utilized to develop generalist agents, underscores his commitment to advancing advancements that strengthen the state of artificial intelligence and machine learning. As an assistant professor positioned at an early career stage in academia, he is expected to further develop his research portfolio, engage in scholarly activities, and uphold the university's academic mission.\n\n" + 
-            "In his role at Peking University, Yitao Liang likely engages in a range of academic activities, including conducting research, publishing scholarly papers, securing research funding, teaching courses, and supervising graduate students. His dedication to 'learning and making decisions under structured environments with uncertainty' aligns with his research passion and underscores his commitment to addressing complex challenges within the field. Yitao Liang's journey from UCLA to his current position showcases a deep-rooted connection to advancing knowledge in AI and machine learning, making him a valuable asset to the academic community at large."
-          ]
-        ]
-      },
-      {
-        "description": "Introduction",
-        "turns": [
-          ["User", "Introduce World War II."],
-          ["ChatGPT", "Many significant events occurred during World War II. Firstly, the war broke out on September 1, 1939, when Nazi Germany invaded Poland. The war involved all the world's great powers, forming two opposing military alliances: the Allies and the Axis.\n\nDuring the war, Germany launched Blitzkrieg campaigns, capturing many countries such as France, Norway, the Netherlands, and Belgium. Japan also expanded its influence in East Asia and the Pacific region.\n\nThe Allies consisted of the United States, the Soviet Union, the United Kingdom, and other countries, uniting to resist the Axis. The Soviet Union played a key role on the Eastern Front, where Germany invaded the Soviet Union in Operation Barbarossa but was ultimately defeated in the Battle of Stalingrad.\n\nThe United States joined the war after the Pearl Harbor attack, becoming a key force among the Allies. The Allied forces achieved victories in Africa, Italy, and Western Europe, eventually ending the war in Europe in 1945.\n\nThe Pacific theater continued until 1945. The United States conducted several naval battles, including the Battle of Midway and the Battle of Guadalcanal, ultimately leading to Japan's surrender in September 1945 after the atomic bombings of Hiroshima and Nagasaki, marking the end of World War II."],
-          ["RAT",
-            "### The Outbreak of World War II\nDuring World War II, a pivotal era unfolded with significant events that shaped the course of history. It commenced on September 1, 1939, when Nazi Germany invaded Poland, triggering a global conflict that drew major powers into opposing alliances—the Allies and the Axis. This conflict escalated as nations formed alliances, leading to a series of intense battles and campaigns across various theaters of war.\n\n### The Formation of the Allies and the Axis\nThe Allies, consisting of nations such as the United States, Great Britain, and the Soviet Union, united to counter the aggressive expansion of the Axis powers, notably Germany, Japan, and Italy. The war further intensified as the Axis powers sought to advance their domination, prompting a worldwide struggle for supremacy.\n\n### Strategies and Occupations by the Axis Powers\nDuring the war, Germany conducted lightning warfare, occupying many countries such as France, Norway, the Netherlands, and Belgium. Japan also expanded its influence in East Asia and the Pacific region through military aggression. The conflict brought devastation to regions across the globe and led to significant shifts in power dynamics.\n\n### The Aftermath and Emergence of the Cold War\nThe conclusion of World War II marked a transformative period in global history. The dissolution of the Grand Alliance following Roosevelt's passing in April 1945 and the leadership transition to Harry S. Truman set the stage for a new era defined by the emerging Cold War tensions. The Yalta Conference in February 1945 and subsequent conferences reflected the complex relationships among the Allied leaders as they navigated differing strategic visions and post-war arrangements. Stalin's territorial demands and influence in Eastern Europe raised concerns among Western leaders, foreshadowing the geopolitical challenges that would shape the post-war world order. These events culminated in the onset of the Cold War, ushering in an era of ideological confrontation and global power struggles that would define international relations for decades to come."
-          ]
-        ]
-      },
-      ];
-
-      let currentIndex = 0;
-
-      function update_dialog_demo() {
-        clearChatHistory();
-
-        for (let i = 0; i < conversations[currentIndex].turns.length; i++) {
-          if (conversations[currentIndex].turns[i].length == 2) {
-            addMessageToChatHistory(conversations[currentIndex].turns[i][0], conversations[currentIndex].turns[i][1]);
-          }
-          else {
-            addMessageToChatHistory(conversations[currentIndex].turns[i][0], conversations[currentIndex].turns[i][1], conversations[currentIndex].turns[i][2]);
-          }
-        }
-
-        document.querySelector('.chat-history').scrollTop = 0;
-      }
-
-      // Initialize the displayed image
-      update_dialog_demo();
-
-      // Event listeners for the buttons
-      document.getElementById('prev-question').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + conversations.length) % conversations.length;
-        update_dialog_demo();
-      });
-
-      document.getElementById('next-question').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % conversations.length;
-        update_dialog_demo();
-      });
-    </script>
 
     <footer class="footer">
       <div class="container">
